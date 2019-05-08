@@ -3,7 +3,6 @@
 @section('content')
 
 <div class="container">
-	github push check in heroku if pushed
 	<div class="card">
 		<div class="card-header">
 			<div class="dropdown">Filter by:
