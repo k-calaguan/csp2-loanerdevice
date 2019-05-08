@@ -18,7 +18,7 @@
 
 		@elseif(Auth::user()->is_admin == 1)
 			<div class="col-sm-12 table-responsive">
-				<table class="table table-hover">
+				<table class="table table-hover table-light col-12">
 					<thead>
 						<tr>
 							<th>Request Number</th>

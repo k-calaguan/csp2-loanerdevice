@@ -13,7 +13,7 @@
 		</div>
 	@endif
 	
-	<div class="row">
+	<div class="row bg-light pt-4">
 		<div class="col-sm-12 col-lg-6 mb-4">
 			<h1 class="text-center">New Category</h1>
 			<form class="form-group" method="POST" action="/categories">
