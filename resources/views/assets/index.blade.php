@@ -130,9 +130,15 @@
 		</div> {{-- end of Admin View --}}
 
 		@else
+			<div class="row mb-3">
+				<div class="col-sm-6 col-lg-6">
+					<label for="searchModel">Search:</label>
+					<input type="text" id="searchModel">
+				</div>
+			</div>
 			<div class="row">
 				@foreach($modelnames as $modelname)
-				<div class="col-sm-6 col-lg-3 mb-3 card-group">
+				<div class="col-sm-6 col-lg-3 mb-3 card-group" id="divCard">
 					<div class="card">
 						<div class="card-header">{{$modelname->name}}</div>
 						<div class="card-body">
@@ -185,6 +191,15 @@
 		$("#searchSN").on("keyup", function() {
 			let value = $(this).val().toLowerCase();
 			$("#tBody tr").filter(function() {
+				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			});
+		});
+	});
+
+	$(document).ready(function() {
+		$("#searchModel").on("keyup", function() {
+			let value = $(this).val().toLowerCase();
+			$("#divCard .card").filter(function() {
 				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
 			});
 		});
