@@ -12,6 +12,7 @@
 	<!-- Scripts -->
 	<script src="{{ asset('js/app.js') }}" defer></script>
 	<script src="{{ asset('js/bootstrap.js') }}" defer></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
 	<!-- Fonts -->
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -87,35 +88,49 @@
 									<a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
 								</li>
 								@endif --}}
-								@else
-								<li class="nav-item dropdown">
-									<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-										{{ Auth::user()->name }} <span class="caret"></span>
-									</a>
-
-									<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-										<a class="dropdown-item" href="#">Profile</a>
-
-										<a class="dropdown-item" href="{{ route('logout') }}"
-										onclick="event.preventDefault();
-										document.getElementById('logout-form').submit();">
-										{{ __('Logout') }}
-									</a>
-
-									<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-										@csrf
-									</form>
-								</div>
+						@else
+							<li class="nav-item">
+								<p class="nav-link">{{ Auth::user()->name }} <span class="caret"></span></p>
 							</li>
-							@endguest
-						</ul>
-					</div>
-				</div>
-			</nav>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ route('logout') }}"
+									onclick="event.preventDefault();
+									document.getElementById('logout-form').submit();">
+									<i class="fas fa-sign-out-alt" data-toggle="tooltip" data-placement="bottom" title="Logout"></i>
+								</a>
+								<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+									@csrf
+								</form>
+							</li>
 
-			<main class="py-4">
-				@yield('content')
-			</main>
-		</div>
-	</body>
-	</html>
+						{{-- <li class="nav-item dropdown">
+							<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+								{{ Auth::user()->name }} <span class="caret"></span>
+							</a>
+
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">Profile</a>
+
+								<a class="dropdown-item" href="{{ route('logout') }}"
+								onclick="event.preventDefault();
+								document.getElementById('logout-form').submit();">
+								{{ __('Logout') }}
+								</a>
+
+								<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+									@csrf
+								</form>
+							</div>
+						</li> --}}
+						@endguest
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<main class="py-4">
+			@yield('content')
+		</main>
+	</div>
+</body>
+</html>

@@ -33,8 +33,8 @@
 				</div>
 			</div>
 			<div class="col-sm-6 col-lg-6">
-				<label for="search">Search SN:</label>
-				<input type="text" name="search">
+				<label for="searchSN">Search SN:</label>
+				<input type="text" id="searchSN">
 			</div>
 		</div>
 
@@ -51,7 +51,7 @@
 						<th>Date Updated</th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody id="tBody">
 					@foreach($assets as $asset)
 					<tr>
 						<td>
@@ -179,4 +179,15 @@
 		@endif
 	@endif
 </div>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#searchSN").on("keyup", function() {
+			let value = $(this).val().toLowerCase();
+			$("#tBody tr").filter(function() {
+				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			});
+		});
+	});
+</script>
 @endsection

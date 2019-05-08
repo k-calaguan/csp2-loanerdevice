@@ -15,11 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        if(request()->has('filter')) {
-            $users = User::where('is_admin', request('filter'))->get()->sortBy('name');
-        } else {
-            $users = User::all()->sortBy('name');
-        }
+        $users = User::all()->sortBy('name');
 
         return view('admin.index_user', compact('users'));
     }
