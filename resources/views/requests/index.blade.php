@@ -108,7 +108,7 @@
 			</div>
 		@else
 			<div class="col-sm-12 table-responsive">
-				<table class="table table-hover">
+				<table class="table table-hover table-light col-12">
 					<thead>
 						<tr>
 							<th>Date Created</th>
