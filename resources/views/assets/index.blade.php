@@ -22,7 +22,7 @@
 		{{-- Admin View --}}
 		<div class="row mb-3">
 			<div class="col-sm-6 col-lg-6">
-				<div class="dropdown"><span class="text-light">Filter by:</span>
+				<div class="dropdown"><span>Filter by:</span>
 					<button class="dropdown-toggle" data-toggle="dropdown"></button>
 					
 					<div class="dropdown-menu">
@@ -33,7 +33,7 @@
 				</div>
 			</div>
 			<div class="col-sm-6 col-lg-6">
-				<label for="searchSN" class="text-light">Search SN:</label>
+				<label for="searchSN">Search SN:</label>
 				<input type="text" id="searchSN">
 			</div>
 		</div>

@@ -26,7 +26,7 @@
 							<th>Model</th>
 							<th>Asset</th>
 							<th>Status</th>
-							<th>Date Created</th>
+							<th>Da` Created</th>
 							<th>Date Completed</th>
 						</tr>
 					</thead>
