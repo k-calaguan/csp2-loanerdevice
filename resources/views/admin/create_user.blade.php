@@ -14,9 +14,10 @@
 	@endif
 
 	<div class="row justify-content-center">
-		<div class="col-md-8">
-			<div class="card">
-				<div class="card-header">Create New User</div>
+		<div class="col-sm-12 col-lg-8">
+			<div class="card pt-3">
+				
+				<h1 class="text-center">New User</h1>
 
 				<div class="card-body">
 					<form method="POST" action="/users">
@@ -72,9 +73,9 @@
 							</div>
 						</div>
 
-						<div class="form-group row mb-0">
-							<div class="col-md-6 offset-md-4">
-								<button type="submit" class="btn btn-primary">Add</button>
+						<div class="form-group">
+							<div class="d-flex justify-content-center">
+								<button class="btn btn-info btn-block col-3" type="submit">Add</button>
 							</div>
 						</div>
 					</form>

@@ -3,36 +3,42 @@
 @section('content')
 
 <div class="container">
-	<div class="card">
-		<div class="card-header">
-			<div class="col-sm-12 col-lg-10">
-				<label for="search">Search</label>
-				<input type="text" id="search">
+	<div class="row mb-3">
+		<div class="col-12">
+			<div class="float-right">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text">Search:</span>
+					</div>
+					<input type="text" name="" id="search" class="form-control">
+				</div>
 			</div>
 		</div>
-		<div class="card-body table-responsive">
-			<table class="table table-hover table-sm">
-				<thead>
+	</div>
+	<div class="row">
+		<div class="col-12 table-responsive">
+			<table class="table table-hover table-light table-sm">
+				<thead class="thead-light">
 					<tr>
-						<th>Name</th>
-						<th>Email Address</th>
-						<th>Permission</th>
-						<th>Created on</th>
-						<th>Updated at</th>
+						<th class="pl-3">Name</th>
+						<th class="pl-3">Email Address</th>
+						<th class="pl-3">Permission</th>
+						<th class="pl-3">Created on</th>
+						<th class="pl-3">Updated at</th>
 					</tr>
 				</thead>
 				<tbody id="tBody">
 					@foreach($users as $user)
 					<tr>
-						<td>{{ $user->name }}</td>
-						<td>{{ $user->email }}</td>
+						<td class="pl-3">{{ $user->name }}</td>
+						<td class="pl-3">{{ $user->email }}</td>
 						@if($user->is_admin == 1)
-							<td>Administrator</td>
+							<td class="pl-3">Administrator</td>
 						@else
-							<td>User</td>
+							<td class="pl-3">User</td>
 						@endif
-						<td>{{ $user->created_at }}</td>
-						<td>{{ $user->updated_at }}</td>
+						<td class="pl-3">{{ $user->created_at }}</td>
+						<td class="pl-3">{{ $user->updated_at }}</td>
 					</tr>	
 					@endforeach
 				</tbody>

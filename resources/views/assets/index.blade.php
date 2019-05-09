@@ -21,112 +21,131 @@
 		@if($user->is_admin == 1)
 		{{-- Admin View --}}
 		<div class="row mb-3">
-			<div class="col-sm-6 col-lg-6">
-				<div class="dropdown"><span>Filter by:</span>
-					<button class="dropdown-toggle" data-toggle="dropdown"></button>
-					
-					<div class="dropdown-menu">
-						<a href="/assets" class="dropdown-item">Clear filter</a>
-						<a href="/assets/?filter=1" class="dropdown-item">Available</a>
-						<a href="/assets/?filter=2" class="dropdown-item">Not Available</a>
+			<div class="col-lg-6">
+				<div class="row pl-3">
+					<div class="dropdown mr-3">
+						<div class="btn btn-info dropdown-toggle" data-toggle="dropdown">Filter By</div>
+						
+						<div class="dropdown-menu">
+							<a href="/assets" class="dropdown-item">Clear filter</a>
+							<a href="/assets/?filter=1" class="dropdown-item">Available</a>
+							<a href="/assets/?filter=2" class="dropdown-item">Not Available</a>
+						</div>
+					</div>
+					<div class="dropdown"><span></span>
+						<div class="btn btn-info dropdown-toggle" data-toggle="dropdown">Sort By</div>
+						
+						<div class="dropdown-menu">
+							<a href="#" class="dropdown-item">blank</a>
+							<a href="#" class="dropdown-item">blank</a>
+							<a href="#" class="dropdown-item">blank</a>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-6 col-lg-6">
-				<label for="searchSN">Search SN:</label>
-				<input type="text" id="searchSN">
+			<div class="col-lg-6">
+				<div class="float-right">
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">Search SN:</span>
+						</div>
+						<input type="text" name="" id="searchSN" class="form-control">
+					</div>
+				</div>
 			</div>
 		</div>
 
-		<div class="row table-responsive">
-			<table class="table table-hover table-light col-12">
-				<thead>
-					<tr>
-						<th>Model Name</th>
-						<th>Image</th>
-						<th>Serial Number</th>
-						<th>Category</th>
-						<th>Status</th>
-						<th>Date Created</th>
-						<th>Date Updated</th>
-					</tr>
-				</thead>
-				<tbody id="tBody">
-					@foreach($assets as $asset)
-					<tr>
-						<td>
-							<a href="/modelnames/{{ $asset->modelname->id}}/edit">{{ $asset->modelname->name }}</a>
-						</td>
-						<td><img src="{{ $asset->modelname->image }}" class="img-thumbnail rounded mx-auto d-block" style="height:50px"></td>
-						<td>
-							<!-- Edit Asset SN Modal Button -->
-							<a href="" class="btn btn-link" data-toggle="modal" data-target="#editModal{{$asset->id}}">{{ $asset->sn }}</a>
+		<div class="row">
+			<div class="table-responsive">
+				<table class="table table-hover table-light">
+					<thead class="thead-light">
+						<tr>
+							<th>Model Name</th>
+							<th>Image</th>
+							<th>Serial Number</th>
+							<th>Category</th>
+							<th>Status</th>
+							<th>Date Created</th>
+							<th>Date Updated</th>
+						</tr>
+					</thead>
+					<tbody id="tBody">
+						@foreach($assets as $asset)
+						<tr>
+							<td>
+								<a href="/modelnames/{{ $asset->modelname->id}}/edit">{{ $asset->modelname->name }}</a>
+							</td>
+							<td><img src="{{ $asset->modelname->image }}" class="img-thumbnail rounded mx-auto d-block" style="height:50px"></td>
+							<td>
+								<!-- Edit Asset SN Modal Button -->
+								<a href="" class="btn btn-link" data-toggle="modal" data-target="#editModal{{$asset->id}}">{{ $asset->sn }}</a>
 
-							<!-- Edit Asset SN Form Modal -->
-							<div class="modal fade" id="editModal{{$asset->id}}" tabindex="-1" role="dialog">
-								<div class="modal-dialog" role="document">
-									<div class="modal-content">
-										<div class="modal-header">
-											<h5 class="modal-title">{{ $asset->modelname->name }} - {{ $asset->sn }}</h5>
+								<!-- Edit Asset SN Form Modal -->
+								<div class="modal fade" id="editModal{{$asset->id}}" tabindex="-1" role="dialog">
+									<div class="modal-dialog" role="document">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title">{{ $asset->modelname->name }} - {{ $asset->sn }}</h5>
+											</div>
+
+											<form class="form-horizontal" method="POST" action="/assets/{{$asset->id}}" enctype="multipart/form-data">
+												@csrf
+												@method('PUT')
+												<div class="modal-body">
+													<div class="form-group">
+														<label class="control-label col-sm-4" for="sn">Serial Number:</label>
+														<div class="col-sm-12">
+															<input class="form-control" type="text" name="sn" id="sn" value="{{ $asset->sn }}">
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="control-label col-sm-3" for="modelname_id">Model Name:</label>
+														<div class="col-sm-12">
+															<select class="form-control" name="modelname_id" id="modelname_id">
+																<option>-- Select Model Name --</option>
+																@foreach($modelnames as $modelname)
+																	@if($asset->modelname_id == $modelname->id)
+																		<option value="{{ $modelname->id }}" selected>{{ $modelname->name }}</option>
+																	@else
+																		<option value="{{ $modelname->id }}">{{ $modelname->name }}</option>
+																	@endif
+																@endforeach
+															</select>
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="control-label col-sm-3" for="status_id">Status:</label>
+														<div class="col-sm-12">
+															<select class="form-control" name="status_id" id="status_id">
+																@foreach($statuses as $status)
+																	@if($asset->status_id == $status->id)
+																		<option value="{{ $status->id }}" selected>{{ $status->name }}</option>
+																	@else
+																		<option value="{{ $status->id }}">{{ $status->name }}</option>
+																	@endif
+																@endforeach
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+													<button type="submit" class="btn btn-primary">Save changes</button>
+												</div>
+											</form>
 										</div>
-
-										<form class="form-horizontal" method="POST" action="/assets/{{$asset->id}}" enctype="multipart/form-data">
-											@csrf
-											@method('PUT')
-											<div class="modal-body">
-												<div class="form-group">
-													<label class="control-label col-sm-4" for="sn">Serial Number:</label>
-													<div class="col-sm-12">
-														<input class="form-control" type="text" name="sn" id="sn" value="{{ $asset->sn }}">
-													</div>
-												</div>
-												<div class="form-group">
-													<label class="control-label col-sm-3" for="modelname_id">Model Name:</label>
-													<div class="col-sm-12">
-														<select class="form-control" name="modelname_id" id="modelname_id">
-															<option>-- Select Model Name --</option>
-															@foreach($modelnames as $modelname)
-																@if($asset->modelname_id == $modelname->id)
-																	<option value="{{ $modelname->id }}" selected>{{ $modelname->name }}</option>
-																@else
-																	<option value="{{ $modelname->id }}">{{ $modelname->name }}</option>
-																@endif
-															@endforeach
-														</select>
-													</div>
-												</div>
-												<div class="form-group">
-													<label class="control-label col-sm-3" for="status_id">Status:</label>
-													<div class="col-sm-12">
-														<select class="form-control" name="status_id" id="status_id">
-															@foreach($statuses as $status)
-																@if($asset->status_id == $status->id)
-																	<option value="{{ $status->id }}" selected>{{ $status->name }}</option>
-																@else
-																	<option value="{{ $status->id }}">{{ $status->name }}</option>
-																@endif
-															@endforeach
-														</select>
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-												<button type="submit" class="btn btn-primary">Save changes</button>
-											</div>
-										</form>
 									</div>
 								</div>
-							</div>
-						</td>
-						<td>{{ $asset->modelname->category->name }}</td>
-						<td>{{ $asset->status->name }}</td>
-						<td>{{ $asset->created_at }}</td>
-						<td>{{ $asset->updated_at }}</td>
-					</tr>
-					@endforeach
-				</tbody>
-			</table>
+							</td>
+							<td>{{ $asset->modelname->category->name }}</td>
+							<td>{{ $asset->status->name }}</td>
+							<td>{{ $asset->created_at }}</td>
+							<td>{{ $asset->updated_at }}</td>
+						</tr>
+						@endforeach
+					</tbody>
+				</table>
+			</div>
 		</div> {{-- end of Admin View --}}
 
 		@else

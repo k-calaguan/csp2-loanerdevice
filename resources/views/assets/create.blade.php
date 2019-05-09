@@ -25,7 +25,7 @@
 				</div>
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-12 d-flex justify-content-center">
-						<button class="btn btn-primary btn-block col-sm-12 col-md-6 col-lg-4" type="submit">Add</button>
+						<button class="btn btn-info btn-block col-sm-12 col-md-6 col-lg-4" type="submit">Add</button>
 					</div>
 				</div>
 			</form>
@@ -65,7 +65,7 @@
 				</div>
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-12 d-flex justify-content-center">
-						<button class="btn btn-primary btn-block col-sm-12 col-md-6 col-lg-4" type="submit">Add</button>
+						<button class="btn btn-info btn-block col-sm-12 col-md-6 col-lg-4" type="submit">Add</button>
 					</div>
 				</div>
 			</form>
@@ -104,7 +104,7 @@
 				</div>
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-12 d-flex justify-content-center">
-						<button class="btn btn-primary btn-block col-sm-12 col-md-6 col-lg-4" type="submit">Add</button>
+						<button class="btn btn-info btn-block col-sm-12 col-md-6 col-lg-4" type="submit">Add</button>
 					</div>
 				</div>
 			</form>

@@ -1,0 +1,49 @@
+body{
+	height: 100%;
+	min-height: 100%;
+	background-color:#343a40;
+}
+#nav-title {
+	font-family: 'Source Code Pro', monospace;
+}
+.custom-card-dark{
+	background-color: #343a40;
+	border: none;
+	color: #fff;
+}
+#lword{
+	color: #fff;
+	display: inline;
+	font-family: 'Playfair Display', serif;
+	font-size: 48px;
+	font-weight: bold;
+	letter-spacing: 1.2px;
+	line-height: 50px;
+	padding-right: 15px;
+}
+#lword-side{
+	color: #5e9bb8;
+	display: inline;
+	font-family: 'Playfair Display', serif;
+	font-size: 24px;
+	font-weight: bold;
+	letter-spacing: 0.5px;
+	line-height: 36px;
+}
+.lword-syllables,
+.lword-prs{
+	color: #cfcfcf;
+	display: inline;
+	font-family: 'Open Sans',Helvetica,Arial,sans-serif;
+	font-size: 20px;
+	letter-spacing: 0.5px;
+	line-height: 30px;
+}
+.lword-def{
+	color: #eaeaea;
+	display: inline;
+	font-family: 'Open Sans',Helvetica,Arial,sans-serif;
+	font-size: 24px;
+	letter-spacing: 0.3px;
+	line-height: 22px;
+}
