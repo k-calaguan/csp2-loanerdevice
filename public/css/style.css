@@ -11,6 +11,22 @@ body{
 	border: none;
 	color: #fff;
 }
+.custom-card-color{
+	background-color: #ea7474;
+}
+.alert-notif-fixed{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	z-index: 9999;
+	border-radius: 0px;
+}
+.custom-alert{
+	position: fixed;
+	top: 14%;
+	left: 7%;
+}
 #lword{
 	color: #fff;
 	display: inline;

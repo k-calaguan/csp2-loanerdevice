@@ -14,7 +14,14 @@
 		@endif
 
 		@guest
-			You have no permission to this page. Please <a href="/login">login</a> first.
+			<div class="row justify-content-center">
+				<div class="card custom-card-color col-7 p-4">
+					<div class="text-center">
+						<h2 class="text-light">Access Denied</h2>
+						<h5>You do not have permission to this page. Please <a href="/login" class="text-light">login</strong></a> first.</h5>
+					</div>
+				</div>
+			</div>
 
 		@else
 			<div class="float-right mb-3">
@@ -27,8 +34,8 @@
 			</div>
 
 			@if(Auth::user()->is_admin == 1)
-				<div class="table-responsive">
-					<table class="table table-hover table-light col-12">
+				<div class="card table-responsive">
+					<table class="table table-hover">
 						<thead class="thead-light">
 							<tr>
 								<th>Date Created</th>
@@ -117,8 +124,8 @@
 					</table>
 				</div>
 			@else
-				<div class="col-sm-12 table-responsive">
-					<table class="table table-hover table-light col-12">
+				<div class="card table-responsive">
+					<table class="table table-hover">
 						<thead>
 							<tr>
 								<th>Date Created</th>
@@ -155,12 +162,12 @@
 										@foreach($statuses as $status)
 											@if($status->id == $userreq->status_id)
 												@if($userreq->status_id == 3)
-													<td> Pending for approval
+													<td><p class="mb-1">Pending for approval</p>
 														<form method="POST" action="/requests/{{$userreq->id}}">
 															@csrf
 															@method('PUT')
 															<input type="text" name="req_action" value="cancelled" hidden>
-															<button type="submit" class="btn btn-sm btn-outline-danger">Cancel</button>
+															<button type="submit" class="btn btn-sm btn-outline-danger btn-block">Cancel</button>
 														</form>
 													</td>
 												@else

@@ -5,7 +5,14 @@
 @section('content')
 <div class="container">
 	@guest
-		You have no permission to this page. Please <a href="/login">login</a> first.
+		<div class="row justify-content-center">
+			<div class="card custom-card-color col-7 p-4">
+				<div class="text-center">
+					<h2 class="text-light">Access Denied</h2>
+					<h5>You do not have permission to this page. Please <a href="/login" class="text-light">login</strong></a> first.</h5>
+				</div>
+			</div>
+		</div>
 
 	@else
 		@if (session('status'))
@@ -137,7 +144,7 @@
 																						</div>
 																						<div class="modal-footer">
 																							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-																							<button type="submit" class="btn btn-primary">Save changes</button>
+																							<button type="submit" class="btn btn-info">Save changes</button>
 																						</div>
 																					</form>
 																				</div>
@@ -252,7 +259,7 @@
 																					</div>
 																					<div class="modal-footer">
 																						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-																						<button type="submit" class="btn btn-primary">Save changes</button>
+																						<button type="submit" class="btn btn-info">Save changes</button>
 																					</div>
 																				</form>
 																			</div>
@@ -361,7 +368,7 @@
 														</div>
 														<div class="modal-footer">
 															<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-															<button type="submit" class="btn btn-primary">Save changes</button>
+															<button type="submit" class="btn btn-info">Save changes</button>
 														</div>
 													</form>
 												</div>

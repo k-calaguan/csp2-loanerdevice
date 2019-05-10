@@ -31,8 +31,8 @@
 	<div id="app">
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top py-3">
 			<div class="container">
-				<a class="navbar-brand" href="{{ url('/') }}">
-					<span id="nav-title">{{ config('app.name', 'Laravel') }}</span>
+				<a class="navbar-brand" href="url{{ "/" }}">
+					<span id="nav-title"><h4>{{ config('app.name', 'Laravel') }}</h4></span>
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
 					<span class="navbar-toggler-icon"></span>

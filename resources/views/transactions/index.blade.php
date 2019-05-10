@@ -14,7 +14,14 @@
 		@endif
 
 		@guest
-			You have no permission to this page. Please <a href="/login">login</a> first.
+			<div class="row justify-content-center">
+				<div class="card custom-card-color col-7 p-4">
+					<div class="text-center">
+						<h2 class="text-light">Access Denied</h2>
+						<h5>You do not have permission to this page. Please <a href="/login" class="text-light">login</strong></a> first.</h5>
+					</div>
+				</div>
+			</div>
 
 		@else
 			<div class="float-right mb-3">
@@ -27,8 +34,8 @@
 			</div>
 
 			@if(Auth::user()->is_admin == 1)
-				<div class="table-responsive">
-					<table class="table table-hover table-light">
+				<div class="card table-responsive">
+					<table class="table table-hover">
 						<thead class="thead-light">
 							<tr>
 								<th>Request Number</th>
@@ -80,9 +87,9 @@
 					</table>
 				</div>
 			@else
-				<div class="table-responsive">
-					<table class="table table-hover table-light">
-						<thead>
+				<div class="card table-responsive">
+					<table class="table table-hover">
+						<thead class="thead-light">
 							<tr>
 								<th>Request Number</th>
 								<th>Model</th>
@@ -92,7 +99,7 @@
 								<th>Date Completed</th>
 							</tr>
 						</thead>
-						<tbody>
+						<tbody id="tBody">
 							@foreach($trans as $tran)
 								@if($tran->user_id == Auth::user()->id)
 									<tr>
