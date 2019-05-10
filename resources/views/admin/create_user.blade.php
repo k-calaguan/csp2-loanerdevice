@@ -5,11 +5,13 @@
 <div class="container">
 	{{-- alert message here --}}
 	@if (session('status'))
-		<div class="alert {{ session('alert-type') }} alert-dissmisible fade show" role="alert">
-			{{ session('status') }}
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			</button>
+		<div class="col-sm-12 col-lg-6 justify-content-center">
+			<div class="alert {{ session('alert-type') }} alert-dissmisible fade show custom-alert" role="alert">
+				{{ session('status') }}
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
 		</div>
 	@endif
 

@@ -14,18 +14,15 @@ body{
 .custom-card-color{
 	background-color: #ea7474;
 }
-.alert-notif-fixed{
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	width: 100%;
-	z-index: 9999;
-	border-radius: 0px;
-}
 .custom-alert{
 	position: fixed;
+	width: 700px;
 	top: 14%;
-	left: 7%;
+	left: 50%;
+	margin-left: -350px;
+	z-index: 5;
+	box-shadow: 2px 2px 10px;
+	border: 10px;
 }
 #lword{
 	color: #fff;
