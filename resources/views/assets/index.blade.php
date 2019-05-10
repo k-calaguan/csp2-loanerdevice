@@ -32,7 +32,7 @@
 		<div class="row mb-3">
 			<div class="col-lg-6">
 				<div class="row pl-3">
-					<div class="dropdown"><span></span>
+					<div class="dropdown" id="sort-btns-sm">
 						<div class="btn btn-info dropdown-toggle" data-toggle="dropdown">Sort By</div>
 						<div class="dropdown-menu">
 							<a href="/assets" class="dropdown-item">Show All</a>
@@ -43,7 +43,7 @@
 				</div>
 			</div>
 			<div class="col-lg-6">
-				<div class="float-right">
+				<div class="float-right" id="float-disable">
 					<div class="input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text">Search SN:</span>

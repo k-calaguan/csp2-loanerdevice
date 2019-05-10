@@ -9,7 +9,7 @@
 		</div>
 	</div>
 
-	<div class="row justify-content-center mb-4">
+	<div class="row justify-content-center">
 		<div class="col-sm-12 col-lg-5 card-group">
 			<div class="card border-info text-center">
 				<table class="table table-striped table-sm">
@@ -67,7 +67,7 @@
 		</div>
 	</div>
 
-	<div class="row justify-content-center mb-4">
+	<div class="row justify-content-center">
 		<div class="col-sm-12 col-lg-12">
 			<div class="card border-info text-center">
 				<table class="table table-striped table-sm">
