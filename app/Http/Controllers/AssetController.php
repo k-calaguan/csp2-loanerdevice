@@ -21,7 +21,7 @@ class AssetController extends Controller
 	{
 		$user = Auth::user();
 		$modelnames = Modelname::all()->sortBy('name');
-		$statuses = Status::all()->where('id', '<=', 2)->sortByDesc('name');
+		$statuses = Status::all()->where('id', '<=', 2)->sortBy('name');
 		$categories = Category::all()->sortBy('name');
 		if(request()->has('filter')) {
 			$assets = Asset::where('status_id', request('filter'))->get()->sortBy('name');
