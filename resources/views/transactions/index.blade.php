@@ -26,7 +26,7 @@
 			</div>
 
 		@else
-			<div class="float-right mb-3">
+			<div class="float-right mb-3" id="float-disable">
 				<div class="input-group">
 					<div class="input-group-prepend">
 						<span class="input-group-text">Search:</span>

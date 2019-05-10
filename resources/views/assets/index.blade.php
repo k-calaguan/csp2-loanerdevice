@@ -392,14 +392,14 @@
 
 		@else
 			<div class="row mb-3">
-				<div class="col-lg-6">
-					<div class="btn-group">
+				<div class="col-sm-12 col-lg-6">
+					<div class="btn-group" id="sort-btns-sm">
 						<a href="/assets" class="btn btn-info">Show All</a>
 						<a href="/assets/?sort=category" class="btn btn-info">Categories</a>
 					</div>
 				</div>
-				<div class="col-lg-6">
-					<div class="float-right">
+				<div class="col-sm-12 col-lg-6">
+					<div class="float-right" id="float-disable">
 						<div class="input-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text">Search:</span>

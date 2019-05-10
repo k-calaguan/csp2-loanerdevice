@@ -3,7 +3,7 @@
 @section('content')
 <div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-md-6 login-page-intro">
             <div class="card custom-card-dark pt-5">
                 <h1 id="lword">loaner</h1>
                 <span id="lword-side">noun</span>
@@ -22,11 +22,12 @@
                     </span>
                 </div>
             </div>
+            <div class="arrow-login-btn bounce text-center">
+                <a href="#l" class="far fa-arrow-alt-circle-down"></a>
+            </div>
         </div>
-        <div class="col-md-6 mt-5">
+        <div class="col-md-6 mt-5 login-page-login" id="l">
             <div class="card py-3 custom-card-dark">
-                {{-- <div class="card-header">{{ __('Login') }}</div> --}}
-
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
