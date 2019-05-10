@@ -23,12 +23,6 @@
 		<div class="row mb-3">
 			<div class="col-lg-6">
 				<div class="row pl-3">
-					{{-- <div class="btn-group mr-3">
-						<a href="/assets" class="btn btn-info">Show All</a>
-						<a href="/assets/?filter=1" class="btn btn-info">Available</a>
-						<a href="/assets/?filter=2" class="btn btn-info">Disabled</a>
-					</div> --}}
-
 					<div class="dropdown"><span></span>
 						<div class="btn btn-info dropdown-toggle" data-toggle="dropdown">Sort By</div>
 						<div class="dropdown-menu">
@@ -62,9 +56,9 @@
 						</div>
 
 						<div class="collapse col-12" id="catCollapse{{$category->id}}">
-							<div class="row">
-								<div class="table-responsive col-12">
-									<div class="card">
+							<div class="row mb-3">
+								<div class="col-12">
+									<div class="card table-responsive">
 										<table class="table table-hover">
 											<thead class="thead-light">
 												<tr>
@@ -176,9 +170,9 @@
 						</div>
 
 						<div class="collapse col-12" id="statCollapse{{$status->id}}">
-							<div class="row">
-								<div class="table-responsive col-12">
-									<div class="card">
+							<div class="row mb-3">
+								<div class="col-12">
+									<div class="card table-responsive">
 										<table class="table table-hover">
 											<thead class="thead-light">
 												<tr>
@@ -288,8 +282,8 @@
 		@else
 			{{-- Show All --}}
 			<div class="row">
-				<div class="table-responsive">
-					<div class="card">	
+				<div class="col-12">
+					<div class="card table-responsive">	
 						<table class="table table-hover">
 							<thead class="thead-light">
 								<tr>
