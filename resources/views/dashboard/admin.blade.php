@@ -68,34 +68,36 @@
 	</div>
 
 	<div class="row justify-content-center mb-4">
-		<div class="card border-info text-center col-sm-12 col-lg-12">
-			<table class="table table-striped table-sm">
-				<div class="pt-3 text-center">
-					<h5>New Assets</h5>
-				</div>
-				<thead>
-					<tr>
-						<th>Model</th>
-						<th>SN</th>
-						<th>Status</th>
-						<th>Created on</th>
-					</tr>
-				</thead>
-				<tbody>
-					@foreach($assets as $asset)
-						@foreach($modelnames as $modelname)
-							@if($modelname->id == $asset->modelname_id)
-								<tr>
-									<td>{{$modelname->name}}</td>
-									<td>{{$asset->sn}}</td>
-									<td>{{$asset->status->name}}</td>
-									<td>{{$asset->created_at}}</td>
-								</tr>
-							@endif
+		<div class="col-sm-12 col-lg-12">
+			<div class="card border-info text-center">
+				<table class="table table-striped table-sm">
+					<div class="pt-3 text-center">
+						<h5>New Assets</h5>
+					</div>
+					<thead>
+						<tr>
+							<th>Model</th>
+							<th>SN</th>
+							<th>Status</th>
+							<th>Created on</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach($assets as $asset)
+							@foreach($modelnames as $modelname)
+								@if($modelname->id == $asset->modelname_id)
+									<tr>
+										<td>{{$modelname->name}}</td>
+										<td>{{$asset->sn}}</td>
+										<td>{{$asset->status->name}}</td>
+										<td>{{$asset->created_at}}</td>
+									</tr>
+								@endif
+							@endforeach
 						@endforeach
-					@endforeach
-				</tbody>
-			</table>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</div>
 
